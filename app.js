@@ -21,3 +21,14 @@ function agregarAmigo() {
         listaAmigos.append(li);
     }
 }
+
+function sortearAmigo() {
+    //determinar el tamano de mi vector
+    //generar un numero random entre 0 cont-1
+    // mostrar el ganador
+    let numeroRamdom = parseInt(Math.random() * cont) - 1;
+    let mostrarResultado=document.getElementById('resultado');
+    mostrarResultado.append(listaNombre[numeroRamdom]);
+
+
+}
