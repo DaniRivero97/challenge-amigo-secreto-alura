@@ -5,8 +5,7 @@ let cont = 0;
 let listaAmigos = document.getElementById('listaAmigos')// referencia a un elemento en el dom
 
 function agregarAmigo() {
-    let nombre = document.getElementById("amigo").value; // Obtiene el valor del input
-    console.log(nombre);
+    let nombre = document.getElementById("amigo").value.trim(); // Obtiene el valor del input
     //validar
     if (nombre == "")// todos los string simpre deben estar en comilla
     {
@@ -19,6 +18,8 @@ function agregarAmigo() {
         let li = document.createElement("li");
         li.textContent = nombre;
         listaAmigos.append(li);
+        // borrar el texto del imput
+        document.getElementById("amigo").value = "";
     }
 }
 
@@ -26,9 +27,7 @@ function sortearAmigo() {
     //determinar el tamano de mi vector
     //generar un numero random entre 0 cont-1
     // mostrar el ganador
-    let numeroRamdom = parseInt(Math.random() * cont) - 1;
-    let mostrarResultado=document.getElementById('resultado');
+    let numeroRamdom = parseInt(Math.random() * cont);
+    let mostrarResultado = document.getElementById('resultado');
     mostrarResultado.append(listaNombre[numeroRamdom]);
-
-
 }
